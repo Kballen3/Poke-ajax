@@ -26,6 +26,11 @@ class PokemonsController < ApplicationController
      
   end
 
+  def form
+    @pokemon = Pokemon.new
+    render partial: 'form'
+  end
+
   def destroy
     @pokemon.destroy
     render json: { message: "Let Pokemon go free" }, status: :ok
